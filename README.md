@@ -8,8 +8,11 @@ kubeadm init --kubernetes-version=v1.15.3 --pod-network-cidr=10.244.0.0/16 --ser
 ```
 ## 安装coredns flannel
 ```
+#安装coredns
+$ ./deploy.sh | kubectl apply -f -
+$ kubectl delete --namespace=kube-system deployment kube-dns
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-#如果不能正常安装，请修改镜像地址，可以先下载下来
+#如果不能正常安装，下载yaml文件并修改镜像地址，镜像地址可以使用googlecontainer/flannel-amd64:0.5.5
 wget https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 kubectl apply -f  kube-flannel.yml
 ```
