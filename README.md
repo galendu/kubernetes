@@ -16,3 +16,9 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documen
 wget https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 kubectl apply -f  kube-flannel.yml
 ```
+## 配置secret ,使用secret拉去私有镜像仓库镜像
+```
+kubectl create secret docker-registry myregistrykey --docker-server=DOCKER_REGISTRY_SERVER --docker-username=DOCKER_USER --docker-password=DOCKER_PASSWORD --docker-email=DOCKER_EMAIL -n namespace
+```
+#### 阿里云的配置方式
+$ kubectl create secret docker-registry  web --docker-server=https://registry.cn-shenzhen.aliyuncs.com   --docker-username=yundv  --docker-password=password --docker-email=yundv@outlook.com -n qqb
