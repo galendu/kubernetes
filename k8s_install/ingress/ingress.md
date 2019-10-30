@@ -10,8 +10,6 @@ https://github.com/kubernetes/ingress-nginx/blob/master/docs/deploy/index.md
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml
 ```
-##### view:
-![](https://img2018.cnblogs.com/blog/1770158/201910/1770158-20191030114254930-2087074380.png)
 #### 3.使用ingress关联servie服务
 ```
 kubectl apply -f ingress.yaml
