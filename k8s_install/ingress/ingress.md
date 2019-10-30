@@ -1,4 +1,4 @@
-## 安装
+## 安装 ingress  deploy-->deploy-svc-->tls-ingree/ingress-->deploy-ingress/deploy-ingress
 #### 1.修改了镜像地址，以及网络模式，选用 hostNetwork: true 网络模式（使用宿主机网络）
 ```
 kubectl apply -f ingress-nginx.yaml
