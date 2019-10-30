@@ -13,6 +13,8 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/mast
 #### 3.使用ingress关联servie服务
 ```
 kubectl apply -f ingress.yaml
+或者
+kubectl apply -f tls-ingress.yaml
 ```
 #### 4.windows本地测试
 添加解析记录
