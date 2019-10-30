@@ -14,3 +14,9 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/mast
 ```
 kubectl apply -f ingress.yaml
 ```
+#### 4.windows本地测试
+添加解析记录
+编辑 C:\Windows\System32\drivers\etc\hosts文件
+```
+ip ingress-ip
+```
