@@ -19,4 +19,7 @@ kubectl apply -f ingress.yaml
 编辑 C:\Windows\System32\drivers\etc\hosts文件
 ```
 ip ingress-ip
+127.0.0.1 www.netsarang.co.kr
+127.0.0.1 sales.netsarang.com
+
 ```
