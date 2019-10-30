@@ -22,3 +22,5 @@ kubectl create secret docker-registry myregistrykey --docker-server=DOCKER_REGIS
 ```
 #### 阿里云的配置方式
 $ kubectl create secret docker-registry  web --docker-server=https://registry.cn-shenzhen.aliyuncs.com   --docker-username=yundv  --docker-password=password --docker-email=yundv@outlook.com -n qqb
+#### ingress-nginx安装
+https://github.com/yundd/kubernetes/blob/master/k8s_install/ingress/ingress.md
