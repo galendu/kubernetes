@@ -7,6 +7,6 @@ spec:
   - host: web.foo.com
   http:
     paths: 
-    - web:
+    - backend:
       serviceName: servicename
       servicePort: 80
