@@ -1,3 +1,20 @@
+## apm install 
+
+```bash
+# 安装apm-server
+curl -L -O https://artifacts.elastic.co/downloads/apm-server/apm-server-7.10.1-x86_64.rpm
+sudo rpm -vi apm-server-7.10.1-x86_64.rpm
+#配置es密码
+output.elasticsearch:
+    hosts: ["<es_url>"]
+    username: <username>
+    password: <password>
+#创建keystore
+apm-server keystore add ES_PWD
+# k8s中使用keystore
+kubectl create secret generic apm-server-apm-token --from-literal=secret-token='ES_PWD'  -n jjqgc --dry-run=client   -o yaml >secret.yml
+kubectl apply -f secret.yml
+```
 ## apm-server & debug
 ```yml
 apiVersion: apps/v1
