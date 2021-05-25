@@ -24,3 +24,18 @@ kubectl create secret docker-registry myregistrykey --docker-server=DOCKER_REGIS
 $ kubectl create secret docker-registry  web --docker-server=https://registry.cn-shenzhen.aliyuncs.com   --docker-username=yundv  --docker-password=password --docker-email=yundv@outlook.com -n qqb
 ## ingress-nginx安装
 https://github.com/yundd/kubernetes/blob/master/k8s_install/ingress/ingress.md
+
+
+## 配置k8s暴露端口的可用范围 
+```bash
+vim /etc/kubernetes/manifests/kube-apiserver.yaml
+#找到 --service-cluster-ip-range 这一行，在这一行的下一行增加 如下内容
+
+- --service-node-port-range=1-65535
+
+systemctl daemon-reload
+systemctl restart kubelet
+kubectl create -f kube-service.yml 
+#如出现执行报错,请使用docker ps -a |grep apiserver 查看apiserver服务
+
+```
