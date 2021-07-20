@@ -25,7 +25,7 @@ spec:
 kind: Deployment
 metadata:
   annotations:
-    configmap.reloader.stakater.com/reload: "foo-configmap" //foo-configmap为该控制器使用到的confimap名称
+    configmap.reloader.stakater.com/reload: "foo-configmap" #foo-configmap为该控制器使用到的confimap名称
 spec:
   template: metadata:
 ```
