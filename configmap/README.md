@@ -20,7 +20,7 @@ spec:
 ```
 ### confimap的热更新
 
-```
+```yaml
 #在需要热更新的deployment等控制器metadata.annotations字段后添加 configmap.reloader.stakater.com/reload: "foo-configmap"
 kind: Deployment
 metadata:
