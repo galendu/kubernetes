@@ -1,7 +1,10 @@
 #!/bin/bash
 yum install -y yum-utils device-mapper-persistent-data lvm2
 yum-config-manager --add-repo  https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-yum install -y docker-ce-18.06.0.ce-3.el7 
+yum install -y docker-ce containerd.io
+rpm -ivh https://ghproxy.com/https://github.com/Mirantis/cri-dockerd/releases/download/v0.2.6/cri-dockerd-0.2.6-3.el7.x86_64.rpm
+systemctl daemon-reload && systemctl restart cri-docker.service
+systemctl enable cri-docker.service
 mkdir -p /etc/docker
 tee /etc/docker/daemon.json <<-'EOF'
 {
