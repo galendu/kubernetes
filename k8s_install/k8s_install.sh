@@ -3,6 +3,8 @@ yum install -y yum-utils device-mapper-persistent-data lvm2
 yum-config-manager --add-repo  https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 yum install -y docker-ce containerd.io
 rpm -ivh https://ghproxy.com/https://github.com/Mirantis/cri-dockerd/releases/download/v0.2.6/cri-dockerd-0.2.6-3.el7.x86_64.rpm
+imageurl="ExecStart=/usr/bin/cri-dockerd --container-runtime-endpoint fd:// --pod-infra-container-image registry.aliyuncs.com/google_containers/pause:3.8"
+sed "/^ExecStart/c$imageurl" /lib/systemd/system/cri-docker.service
 systemctl daemon-reload && systemctl restart cri-docker.service
 systemctl enable cri-docker.service
 mkdir -p /etc/docker
